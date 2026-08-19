@@ -1,531 +1,1906 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Holer3D - Project Sample </title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<title>Daniel A. Solomon | House Agents Association Jos</title>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+/* =========================================================
+   RESET
+========================================================= */
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <!-- =======================================================
-  * Template Name: Impact - v1.1.0
-  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8f7;
+    color: #17221f;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+    --green-dark: #003d2f;
+    --green: #006b52;
+    --green-light: #e8f5ef;
+    --gold: #c9a227;
+    --white: #ffffff;
+    --black: #17221f;
+    --gray: #66716d;
+    --border: #e0e7e4;
+    --background: #f5f8f7;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: var(--green-dark);
+    color: white;
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: rgba(255,255,255,0.08);
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.25;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    color: #cce4dc;
+    margin-top: 3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #e8f4f0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.verify-nav {
+    border: 1px solid #47a98a;
+    padding: 10px 17px;
+    border-radius: 8px;
+    color: white !important;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.container {
+    width: 94%;
+    max-width: 1250px;
+    margin: 30px auto 50px;
+}
+
+
+/* =========================================================
+   PROFILE HERO
+========================================================= */
+
+.profile-hero {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 295px 1fr 190px;
+    gap: 28px;
+    align-items: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 315px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center top;
+    background: #e8e8e8;
+}
+
+.profile-info h1 {
+    font-size: 36px;
+    color: #111b18;
+    margin-bottom: 3px;
+}
+
+.verified-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.verified-badge {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #159447;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.member-title {
+    color: #08784f;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.description {
+    color: #56615d;
+    max-width: 600px;
+    margin-bottom: 17px;
+}
+
+.contact-list {
+    display: grid;
+    gap: 9px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #303b37;
+    font-size: 14px;
+}
+
+.contact-icon {
+    width: 27px;
+    color: var(--green);
+    text-align: center;
+    font-weight: bold;
+}
+
+.qr-box {
+    border: 1px solid #dbe4e0;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    background: #fcfefd;
+}
+
+.qr-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #27332f;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+#qrcode img {
+    width: 130px !important;
+    height: 130px !important;
+}
+
+.qr-box p {
+    font-size: 11px;
+    color: #68736f;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 315px 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.035);
+}
+
+.card-header {
+    background: var(--green-dark);
+    color: white;
+    padding: 15px 19px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf1ef;
+    font-size: 14px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #65706c;
+}
+
+.info-value {
+    text-align: right;
+    font-weight: 500;
+}
+
+.active {
+    background: #dff5e7;
+    color: #08783e;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   AREAS
+========================================================= */
+
+.area-list,
+.specialization-list {
+    list-style: none;
+}
+
+.area-list li,
+.specialization-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.area-list li::before {
+    content: "✓";
+    color: #118c58;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.specialization-list li::before {
+    content: "•";
+    color: var(--green);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.section {
+    padding: 25px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.section-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--green-light);
+    color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.about-text {
+    color: #505c57;
+    font-size: 15px;
+    max-width: 850px;
+}
+
+.divider {
+    height: 1px;
+    background: #e6ebe9;
+    margin: 28px 0;
+}
+
+.professional-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.professional-table td {
+    padding: 11px 0;
+    border-bottom: 1px solid #edf1ef;
+    font-size: 14px;
+}
+
+.professional-table td:first-child {
+    width: 50%;
+    color: #5e6965;
+}
+
+.professional-table td:last-child {
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   CONTACT & PROPERTY
+========================================================= */
+
+.contact-property {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 25px;
+}
+
+.social-list {
+    display: grid;
+    gap: 13px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #3b4843;
+    font-size: 14px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--green-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--green);
+    font-weight: bold;
+}
+
+.property-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   VERIFICATION
+========================================================= */
+
+.verification {
+    margin-top: 25px;
+    border: 1px solid #cce8dc;
+    background: #f1faf6;
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.verification-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.shield {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #16825e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #16825e;
+    font-size: 22px;
+}
+
+.verification h3 {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.verification p {
+    font-size: 13px;
+    color: #55635e;
+}
+
+.verify-button {
+    background: var(--green-dark);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.verify-button:hover {
+    background: var(--green);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: var(--green-dark);
+    color: white;
+    margin-top: 50px;
+}
+
+.footer-main {
+    max-width: 1250px;
+    width: 94%;
+    margin: auto;
+    padding: 45px 0;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.footer-description {
+    color: #b9d0c8;
+    font-size: 13px;
+    max-width: 300px;
+}
+
+.footer-column h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    color: #b9d0c8;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    text-align: center;
+    padding: 18px;
+    color: #a9c4bb;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-check {
+    width: 70px;
+    height: 70px;
+    background: #dff5e7;
+    color: #08783e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto 15px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.modal-content h2 {
+    margin-bottom: 5px;
+}
+
+.modal-content p {
+    color: #66716d;
+    font-size: 14px;
+}
+
+.modal-member {
+    margin-top: 18px;
+    background: #f4f8f6;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.modal-member strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .profile-hero {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .qr-box {
+        grid-column: 1 / -1;
+        width: 220px;
+        justify-self: end;
+        margin-top: -10px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .sidebar .card {
+        margin-bottom: 0;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        min-height: 68px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .logo-text {
+        font-size: 12px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--green-dark);
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .profile-hero {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .profile-photo {
+        height: 330px;
+    }
+
+    .profile-info h1 {
+        font-size: 29px;
+    }
+
+    .qr-box {
+        grid-column: auto;
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-grid {
+        margin-top: 18px;
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    .sidebar .card {
+        margin-bottom: 18px;
+    }
+
+    .contact-property {
+        grid-template-columns: 1fr;
+    }
+
+    .property-image {
+        height: 220px;
+    }
+
+    .verification {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .verification-left {
+        align-items: flex-start;
+    }
+
+    .verify-button {
+        width: 100%;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .container {
+        width: 92%;
+        margin-top: 20px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .profile-photo {
+        height: 300px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .info-value {
+        text-align: left;
+    }
+
+    .professional-table td {
+        display: block;
+        width: 100% !important;
+    }
+
+    .professional-table td:first-child {
+        padding-bottom: 2px;
+        border-bottom: none;
+    }
+
+    .professional-table td:last-child {
+        padding-top: 2px;
+    }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    header,
+    footer,
+    .verify-button,
+    .verification button {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .card,
+    .profile-hero {
+        box-shadow: none;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <section id="topbar" class="topbar d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@holer3d.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+12348165404860</span></i>
-      </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section><!-- End Top Bar -->
 
-  <header id="header" class="header d-flex align-items-center">
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Elevate Your Brand<span>.</span></h1>
-      </a>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
+<header>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <div class="navbar">
 
-    </div>
-  </header><!-- End Header -->
-  <!-- End Header -->
+        <a href="#" class="logo-area">
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero">
-    <div class="container position-relative">
-      <div class="row gy-5" data-aos="fade-in">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-          <h2>Welcome to <span>Our Portfolio</span></h2>
-          <p>This is one of the amazing samples we have for your productS. Click on one of the product below and watch the magic happens</p>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Get Started</a>
-          </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2">
-          <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
-        </div>
-      </div>
+            <div class="logo">
+                🏠
+            </div>
+
+            <div class="logo-text">
+                HOUSE AGENTS ASSOCIATION
+                <span>IN JOS, PLATEAU STATE</span>
+            </div>
+
+        </a>
+
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#">Home</a>
+
+            <a href="#profile">
+                Members
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#professional">
+                Directory
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a href="#verification" class="verify-nav">
+                ✓ Verify Member
+            </a>
+
+        </nav>
+
     </div>
 
+</header>
+
+
+
+<!-- =======================================================
+     MAIN CONTENT
+======================================================= -->
+
+<main class="container">
+
+
+<!-- =======================================================
+     PROFILE HERO
+======================================================= -->
+
+<section class="profile-hero" id="profile">
+
+
+    <!-- PROFILE PHOTO -->
+
+    <img
+        src="Screenshot_20260819_091040_Gallery.jpg"
+        alt="Daniel A. Solomon"
+        class="profile-photo"
+    >
+
+
+    <!-- PROFILE INFORMATION -->
+
+    <div class="profile-info">
+
+        <div class="verified-name">
+
+            <h1 id="memberName">
+                Daniel A. Solomon
+            </h1>
+
+            <span class="verified-badge">
+                ✓
+            </span>
+
+        </div>
+
+
+        <div class="member-title">
+            Registered Member
+        </div>
+
+
+        <p class="description">
+
+            Professional real estate agent based in Jos, Plateau State.
+            Committed to integrity, transparency and excellence in
+            property services.
+
+        </p>
+
+
+        <div class="contact-list">
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    ☎
+                </span>
+
+                <span>
+                    +234 806 123 4567
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    ✉
+                </span>
+
+                <span>
+                    daniel.solomon@haajos.ng
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    📍
+                </span>
+
+                <span>
+                    Jos North, Plateau State
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Joined: March 18, 2023
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    ID
+                </span>
+
+                <span>
+                    HAAJ-ID: HAAJ/2023/0287
+                </span>
+
+            </div>
+
+        </div>
+
     </div>
-  </section>
-  <!-- End Hero Section -->
 
-  <main id="main">
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio sections-bg">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Your Products</h2>
-          <p>Immersive Experience, Powered by HOLLER. Explore our Portfolio below and witness the magic of interactive 3D storytelling</p>
+    <!-- QR CODE -->
+
+    <div class="qr-box">
+
+        <div class="qr-title">
+            SCAN TO VERIFY
         </div>
 
-        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+        <div id="qrcode"></div>
 
-          <div>
-            <ul class="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Product</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-books">Books</li>
-            </ul><!-- End Portfolio Filters -->
-          </div>
+        <p>
+            Scan the QR code to view
+            member verification and
+            profile information.
+        </p>
 
-          <div class="row gy-4 portfolio-container">
+    </div>
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="The Atrium Vista detail.html"><img src="assets/img/portfolio/real estate1.png" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="The Atrium Vista detail.html" title="More Details">The Atrium Vista</a></h4>
-                  <p>Luxury living in the heart of city</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="The Crystal Pavilion detail.html"><img src="assets/img/portfolio/real estate2.png" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="The Crystal Pavilion detail.html" title="More Details">The Crystal Pavilion</a></h4>
-                  <p>Your dream space starts with this view</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="Modwood Escape details.html"><img src="assets/img/portfolio/real estate3.png" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="Modwood Escape details.html" title="More Details">Modwood Escape</a></h4>
-                  <p>Invest smart, live grand in this beauty</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+</section>
 
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="shoe details.html"><img src="assets/img/portfolio/shoe.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="shoe details.html" title="More Details">Fashion</a></h4>
-                  <p>Classic leather built for modern ambition</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="arm_chair detail.html"><img src="assets/img/portfolio/newchair.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="arm_chair detail.html" title="More Details">Furniture</a></h4>
-                  <p>Sit back, relax - luxury redefined today</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+<!-- =======================================================
+     MAIN TWO-COLUMN AREA
+======================================================= -->
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="Wardrobe detail.html"><img src="assets/img/portfolio/modernrobe.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="Wardrobe detail.html" title="More Details">Furniture</a></h4>
-                  <p>Upgrade your space with wardrobe perfection</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="extra_chocolate_marshmallow_cupcake detail.html"><img src="assets/img/portfolio/newicecream.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="extra_chocolate_marshmallow_cupcake detail.html" title="More Details">Snacks</a></h4>
-                  <p>Grab, munch, repeat - snacks done right</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-              <div class="portfolio-wrap">
-                <a href="vans shoe detail.html"><img src="assets/img/portfolio/sneaker.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="vans shoe detail.html" title="More Details">Sneaker</a></h4>
-                  <p>Move bold. walk loud. style never quits</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="White_flower detail.html"><img src="assets/img/portfolio/whiteflower.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="White_flower detail.html" title="More Details">horticulture</a></h4>
-                  <p>Nurturing nature, one plant at a time</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-              <div class="portfolio-wrap">
-                <a href="modern bed.html"><img src="assets/img/portfolio/modernbed.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="modern bed.html" title="More Details">Furniture</a></h4>
-                  <p>Designed for dream, built for modern living</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+<div class="main-grid">
 
 
-          </div><!-- End Portfolio Container -->
+<!-- =======================================================
+     LEFT SIDEBAR
+======================================================= -->
+
+<aside class="sidebar">
+
+
+    <!-- MEMBERSHIP -->
+
+    <div class="card">
+
+        <div class="card-header">
+            🛡️ &nbsp; Membership Information
+        </div>
+
+        <div class="card-body">
+
+            <div class="info-row">
+
+                <span class="info-label">
+                    Membership ID
+                </span>
+
+                <span class="info-value">
+                    HAAJ/2023/0287
+                </span>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span class="info-label">
+                    Membership Type
+                </span>
+
+                <span class="info-value">
+                    Full Member
+                </span>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span class="info-label">
+                    Status
+                </span>
+
+                <span class="info-value">
+                    <span class="active">
+                        Active
+                    </span>
+                </span>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span class="info-label">
+                    Date Registered
+                </span>
+
+                <span class="info-value">
+                    March 18, 2023
+                </span>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span class="info-label">
+                    Renewal Due
+                </span>
+
+                <span class="info-value">
+                    March 18, 2026
+                </span>
+
+            </div>
 
         </div>
 
-      </div>
-    </section><!-- End Portfolio Section -->
+    </div>
 
-    <!-- ======= Our Services Section ======= -->
-    <section id="services" class="services sections-bg">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Our Services</h2>
-          <p>we specialize in creating high-performance webgl solutions that captivate audience and drive engagement, from 3D visualizations to interactive web applications, we bring your vision to life with precision and creativity</p>
-        </div>
 
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+    <!-- AREAS OF OPERATION -->
 
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <h3>Interactive 3D web Experience</h3>
-              <p>Transform user engagement with stunning, broswer-based 3D no downloads, just mealess, immersive interactions that captive and concert</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+    <div class="card">
+
+        <div class="card-body">
+
+            <div class="section-title">
+                <span class="section-icon">
+                    📍
+                </span>
+
+                Areas of Operation
             </div>
-          </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <h3>high-performance visualizations</h3>
-              <p>Unlock lighting-fast, GPU Powered visuals for data, map, or simulations-smooth, scalable, and engineered for presision at 60fps.</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
 
-        
+            <ul class="area-list">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <h3>Shader and custom effects</h3>
-              <p>Elevate your brand with dynamic GLSL magic bespoke animations, particles, and effects that make your site a visual masterpiece..</p>
-              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
+                <li>
+                    Jos North
+                </li>
+
+                <li>
+                    Jos South
+                </li>
+
+                <li>
+                    Bassa LGA
+                </li>
+
+                <li>
+                    Riyom LGA
+                </li>
+
+                <li>
+                    Barkin Ladi
+                </li>
+
+            </ul>
 
         </div>
 
-      </div>
-    </section><!-- End Our Services Section -->
+    </div>
 
-    <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Your Team</h2>
-          <p>Every faces here brings something powerful to the table, A dedicated team committed to excellence and innovation</p>
-        </div>
 
-        <div class="row gy-4">
+    <!-- SPECIALIZATION -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <h4>Walter White</h4>
-              <span>Web Development</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+    <div class="card">
+
+        <div class="card-body">
+
+            <div class="section-title">
+                <span class="section-icon">
+                    ★
+                </span>
+
+                Specialization
             </div>
-          </div><!-- End Team Member -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <h4>Sarah Jhinson</h4>
-              <span>Marketing</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <h4>William Anderson</h4>
-              <span>Content</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+            <ul class="specialization-list">
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+                <li>
+                    Residential Properties
+                </li>
+
+                <li>
+                    Land Sales
+                </li>
+
+                <li>
+                    Property Management
+                </li>
+
+                <li>
+                    Real Estate Consulting
+                </li>
+
+            </ul>
 
         </div>
 
-      </div>
-    </section><!-- End Our Team Section -->
+    </div>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
+</aside>
 
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>Your next big move starts with a massege. Reach out today and lets start something great</p>
+
+
+<!-- =======================================================
+     RIGHT CONTENT
+======================================================= -->
+
+<section>
+
+
+    <!-- ABOUT -->
+
+    <div class="card" id="about">
+
+        <div class="section">
+
+            <div class="section-title">
+
+                <span class="section-icon">
+                    i
+                </span>
+
+                About Me
+
+            </div>
+
+
+            <p class="about-text">
+
+                I am a dedicated real estate professional with over
+                six years of experience in property sales, leasing
+                and management within Jos and its environs.
+                My goal is to provide reliable property solutions
+                to clients with honesty, professionalism and
+                transparency.
+
+            </p>
+
+
+            <div class="divider"></div>
+
+
+            <!-- PROFESSIONAL DETAILS -->
+
+            <div class="section-title" id="professional">
+
+                <span class="section-icon">
+                    💼
+                </span>
+
+                Professional Details
+
+            </div>
+
+
+            <table class="professional-table">
+
+                <tr>
+
+                    <td>
+                        Company / Agency
+                    </td>
+
+                    <td>
+                        Solomon Real Estate & Properties
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Position
+                    </td>
+
+                    <td>
+                        Lead Property Consultant
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Years of Experience
+                    </td>
+
+                    <td>
+                        6+ Years
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Office Address
+                    </td>
+
+                    <td>
+                        No. 12 Ahmadu Bello Way,
+                        Jos North, Plateau State
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Languages
+                    </td>
+
+                    <td>
+                        English, Hausa
+                    </td>
+
+                </tr>
+
+            </table>
+
         </div>
 
-        <div class="row gx-lg-0 gy-4">
+    </div>
 
-          <div class="col-lg-4">
 
-            <div class="info-container d-flex flex-column align-items-center justify-content-center">
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
+
+    <!-- CONTACT -->
+
+    <div class="card" id="contact">
+
+        <div class="section">
+
+            <div class="contact-property">
+
+
+                <!-- SOCIAL INFORMATION -->
+
                 <div>
-                  <h4>Location:</h4>
-                  <p>A000 Adam Street, Your City, Your State. 535022</p>
-                </div>
-              </div><!-- End Info Item -->
 
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>holler3D@gmail.com</p>
-                </div>
-              </div><!-- End Info Item -->
+                    <div class="section-title">
 
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+2348165404860</p>
-                </div>
-              </div><!-- End Info Item -->
+                        <span class="section-icon">
+                            👤
+                        </span>
 
-              <div class="info-item d-flex">
-                <i class="bi bi-clock flex-shrink-0"></i>
-                <div>
-                  <h4>Open Hours:</h4>
-                  <p>Mon-Sun: 12AM - 24PM</p>
+                        Contact & Social
+
+                    </div>
+
+
+                    <div class="social-list">
+
+
+                        <div class="social-item">
+
+                            <span class="social-icon">
+                                ☎
+                            </span>
+
+                            <span>
+                                +234 806 123 4567
+                            </span>
+
+                        </div>
+
+
+                        <div class="social-item">
+
+                            <span class="social-icon">
+                                ✉
+                            </span>
+
+                            <span>
+                                daniel.solomon@haajos.ng
+                            </span>
+
+                        </div>
+
+
+                        <div class="social-item">
+
+                            <span class="social-icon">
+                                🌐
+                            </span>
+
+                            <span>
+                                www.solomonproperties.ng
+                            </span>
+
+                        </div>
+
+
+                        <div class="social-item">
+
+                            <span class="social-icon">
+                                f
+                            </span>
+
+                            <span>
+                                Solomon Properties
+                            </span>
+
+                        </div>
+
+
+                        <div class="social-item">
+
+                            <span class="social-icon">
+                                ◎
+                            </span>
+
+                            <span>
+                                @solomon_properties
+                            </span>
+
+                        </div>
+
+                    </div>
+
                 </div>
-              </div><!-- End Info Item -->
+
+
+                <!-- PROPERTY IMAGE -->
+
+                <div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80"
+                        alt="Property"
+                        class="property-image"
+                    >
+
+                </div>
+
             </div>
 
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
         </div>
 
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Impact</span>
-          </a>
-          <p>Our impact goes beyond the surface - we ignite transformation, empower communities, and create meaningful change that lasts. every decision we make is drien by purpose, passion, and progress.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            Kwang Street <br>
-            Jos South<br>
-            <br><br>
-            <strong>Phone:</strong> +2348165404860<br>
-            <strong>Email:</strong> holler3D@gmail.com<br>
-          </p>
-
-        </div>
-
-      </div>
     </div>
 
-    <div class="container mt-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>holer3d</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">Holer3d</a>
-      </div>
+</section>
+
+</div>
+
+
+
+<!-- =======================================================
+     VERIFICATION NOTICE
+======================================================= -->
+
+<section class="verification" id="verification">
+
+
+    <div class="verification-left">
+
+        <div class="shield">
+            ✓
+        </div>
+
+
+        <div>
+
+            <h3>
+                Member Verification
+            </h3>
+
+            <p>
+                This is an official member of the House Agents
+                Association in Jos, Plateau State.
+                The information provided is verified and
+                confirmed by the association.
+            </p>
+
+        </div>
+
     </div>
 
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <button
+        class="verify-button"
+        onclick="openVerification()"
+    >
+        👤 &nbsp; Verify This Member
+    </button>
 
-  <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+</section>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+</main>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+
+    <div class="footer-main">
+
+
+        <!-- ASSOCIATION -->
+
+        <div class="footer-column">
+
+            <div class="footer-logo">
+
+                <div class="logo">
+                    🏠
+                </div>
+
+                <div class="logo-text">
+
+                    HOUSE AGENTS ASSOCIATION
+
+                    <span>
+                        IN JOS, PLATEAU STATE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="footer-description">
+
+                Promoting professionalism, unity and excellence
+                in real estate services across Jos and Plateau State.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#profile">
+                Members Directory
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#">
+                Events
+            </a>
+
+            <a href="#contact">
+                Contact Us
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                ☎ &nbsp; +234 817 000 1234
+            </p>
+
+            <p>
+                ✉ &nbsp; info@haajos.ng
+            </p>
+
+            <p>
+                📍 &nbsp; No. 5 Terminus Road,
+                Jos, Plateau State
+            </p>
+
+        </div>
+
+
+
+        <!-- SOCIAL -->
+
+        <div class="footer-column">
+
+            <h3>
+                Follow Us
+            </h3>
+
+            <p>
+                Facebook
+            </p>
+
+            <p>
+                Twitter / X
+            </p>
+
+            <p>
+                Instagram
+            </p>
+
+            <p>
+                LinkedIn
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 House Agents Association in Jos, Plateau State.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =======================================================
+     VERIFICATION MODAL
+======================================================= -->
+
+<div class="modal" id="verificationModal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeVerification()"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-check">
+            ✓
+        </div>
+
+
+        <h2>
+            Member Verified
+        </h2>
+
+
+        <p>
+            The following membership information has been
+            verified by the House Agents Association in Jos.
+        </p>
+
+
+        <div class="modal-member">
+
+            <strong>
+                Daniel A. Solomon
+            </strong>
+
+            <span>
+                Membership ID: HAAJ/2023/0287
+            </span>
+
+            <br>
+
+            <span>
+                Status: Active Member
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MEMBER INFORMATION
+========================================================= */
+
+const member = {
+
+    name: "Daniel A. Solomon",
+
+    membershipId: "HAAJ/2023/0287",
+
+    status: "Active",
+
+    profileUrl: window.location.href
+
+};
+
+
+
+/* =========================================================
+   GENERATE QR CODE
+========================================================= */
+
+window.addEventListener("load", function () {
+
+    const qrContainer =
+        document.getElementById("qrcode");
+
+    qrContainer.innerHTML = "";
+
+    new QRCode(qrContainer, {
+
+        text: member.profileUrl,
+
+        width: 130,
+
+        height: 130,
+
+        colorDark: "#003d2f",
+
+        colorLight: "#ffffff",
+
+        correctLevel:
+            QRCode.CorrectLevel.H
+
+    });
+
+});
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+
+
+/* =========================================================
+   VERIFICATION MODAL
+========================================================= */
+
+function openVerification() {
+
+    document.getElementById(
+        "verificationModal"
+    ).style.display = "flex";
+
+}
+
+
+function closeVerification() {
+
+    document.getElementById(
+        "verificationModal"
+    ).style.display = "none";
+
+}
+
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================================= */
+
+window.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById(
+            "verificationModal"
+        );
+
+    if (event.target === modal) {
+
+        closeVerification();
+
+    }
+
+});
+
+
+
+/* =========================================================
+   CLOSE MOBILE MENU AFTER CLICKING LINK
+========================================================= */
+
+document.querySelectorAll(
+    ".nav-links a"
+).forEach(function(link) {
+
+    link.addEventListener(
+        "click",
+        function() {
+
+            document
+                .getElementById("navLinks")
+                .classList
+                .remove("show");
+
+        }
+    );
+
+});
+
+
+</script>
 
 </body>
-
-
 </html>
