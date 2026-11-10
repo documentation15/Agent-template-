@@ -4,1885 +4,708 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Daniel A. Solomon | House Agents Association Jos</title>
-
-<!-- QR Code Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<title>Client Questionnaire</title>
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f8f7;
-    color: #17221f;
-    line-height: 1.6;
+    margin: 0;
+    padding: 24px 14px;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #17202a;
+    min-height: 100vh;
 }
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
-
-/* =========================================================
-   COLORS
-========================================================= */
-
-:root {
-    --green-dark: #003d2f;
-    --green: #006b52;
-    --green-light: #e8f5ef;
-    --gold: #c9a227;
-    --white: #ffffff;
-    --black: #17221f;
-    --gray: #66716d;
-    --border: #e0e7e4;
-    --background: #f5f8f7;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    background: var(--green-dark);
-    color: white;
-    min-height: 78px;
-    display: flex;
-    align-items: center;
-    padding: 0 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
-}
-
-.navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    background: rgba(255,255,255,0.08);
-}
-
-.logo-text {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 1.25;
-}
-
-.logo-text span {
-    display: block;
-    font-size: 12px;
-    font-weight: normal;
-    color: #cce4dc;
-    margin-top: 3px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-size: 14px;
-    color: #e8f4f0;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffffff;
-}
-
-.verify-nav {
-    border: 1px solid #47a98a;
-    padding: 10px 17px;
-    border-radius: 8px;
-    color: white !important;
-}
-
-.menu-btn {
-    display: none;
-    border: none;
-    background: none;
-    color: white;
-    font-size: 27px;
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   PAGE
-========================================================= */
 
 .container {
-    width: 94%;
-    max-width: 1250px;
-    margin: 30px auto 50px;
-}
-
-
-/* =========================================================
-   PROFILE HERO
-========================================================= */
-
-.profile-hero {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 18px;
-    display: grid;
-    grid-template-columns: 295px 1fr 190px;
-    gap: 28px;
-    align-items: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-}
-
-.profile-photo {
     width: 100%;
-    height: 315px;
-    border-radius: 16px;
-    object-fit: cover;
-    object-position: center top;
-    background: #e8e8e8;
+    max-width: 850px;
+    margin: auto;
 }
 
-.profile-info h1 {
-    font-size: 36px;
-    color: #111b18;
-    margin-bottom: 3px;
+.header, .form-panel, .summary-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.05);
 }
 
-.verified-name {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.verified-badge {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #159447;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.member-title {
-    color: #08784f;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 14px;
-}
-
-.description {
-    color: #56615d;
-    max-width: 600px;
-    margin-bottom: 17px;
-}
-
-.contact-list {
-    display: grid;
-    gap: 9px;
-}
-
-.contact-item {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    color: #303b37;
-    font-size: 14px;
-}
-
-.contact-icon {
-    width: 27px;
-    color: var(--green);
-    text-align: center;
-    font-weight: bold;
-}
-
-.qr-box {
-    border: 1px solid #dbe4e0;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    background: #fcfefd;
-}
-
-.qr-title {
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #27332f;
-}
-
-#qrcode {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 10px;
-}
-
-#qrcode img {
-    width: 130px !important;
-    height: 130px !important;
-}
-
-.qr-box p {
-    font-size: 11px;
-    color: #68736f;
-}
-
-
-/* =========================================================
-   GRID
-========================================================= */
-
-.main-grid {
-    display: grid;
-    grid-template-columns: 315px 1fr;
-    gap: 25px;
-    margin-top: 25px;
-}
-
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.035);
-}
-
-.card-header {
-    background: var(--green-dark);
-    color: white;
-    padding: 15px 19px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.info-row {
+.header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 15px;
-    padding: 12px 0;
-    border-bottom: 1px solid #edf1ef;
-    font-size: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
 }
 
-.info-row:last-child {
-    border-bottom: none;
-}
-
-.info-label {
-    color: #65706c;
-}
-
-.info-value {
-    text-align: right;
-    font-weight: 500;
-}
-
-.active {
-    background: #dff5e7;
-    color: #08783e;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   AREAS
-========================================================= */
-
-.area-list,
-.specialization-list {
-    list-style: none;
-}
-
-.area-list li,
-.specialization-list li {
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.area-list li::before {
-    content: "✓";
-    color: #118c58;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.specialization-list li::before {
-    content: "•";
-    color: var(--green);
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.section {
-    padding: 25px;
-}
-
-.section-title {
+.brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 19px;
-    margin-bottom: 18px;
-}
-
-.section-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--green-light);
-    color: var(--green);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-.about-text {
-    color: #505c57;
-    font-size: 15px;
-    max-width: 850px;
-}
-
-.divider {
-    height: 1px;
-    background: #e6ebe9;
-    margin: 28px 0;
-}
-
-.professional-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.professional-table td {
-    padding: 11px 0;
-    border-bottom: 1px solid #edf1ef;
-    font-size: 14px;
-}
-
-.professional-table td:first-child {
-    width: 50%;
-    color: #5e6965;
-}
-
-.professional-table td:last-child {
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   CONTACT & PROPERTY
-========================================================= */
-
-.contact-property {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 25px;
-}
-
-.social-list {
-    display: grid;
     gap: 13px;
 }
 
-.social-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #3b4843;
-    font-size: 14px;
-}
-
-.social-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--green-light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--green);
-    font-weight: bold;
-}
-
-.property-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-
-/* =========================================================
-   VERIFICATION
-========================================================= */
-
-.verification {
-    margin-top: 25px;
-    border: 1px solid #cce8dc;
-    background: #f1faf6;
-    border-radius: 14px;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.verification-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.shield {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid #16825e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #16825e;
-    font-size: 22px;
-}
-
-.verification h3 {
-    font-size: 15px;
-    margin-bottom: 3px;
-}
-
-.verification p {
-    font-size: 13px;
-    color: #55635e;
-}
-
-.verify-button {
-    background: var(--green-dark);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.verify-button:hover {
-    background: var(--green);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    background: var(--green-dark);
-    color: white;
-    margin-top: 50px;
-}
-
-.footer-main {
-    max-width: 1250px;
-    width: 94%;
-    margin: auto;
-    padding: 45px 0;
+.brand-mark {
+    width: 48px;
+    height: 48px;
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 40px;
+    place-items: center;
+    border-radius: 13px;
+    background: #f0fdf4;
+    border: 1px solid #dcfce7;
+    color: #15803d;
+    font-size: 22px;
+    font-weight: 800;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 17px;
+.brand h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 20px;
 }
 
-.footer-description {
-    color: #b9d0c8;
-    font-size: 13px;
-    max-width: 300px;
-}
-
-.footer-column h3 {
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-.footer-column a,
-.footer-column p {
-    display: block;
-    color: #b9d0c8;
-    font-size: 13px;
-    margin-bottom: 9px;
-}
-
-.footer-column a:hover {
-    color: white;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.12);
-    text-align: center;
-    padding: 18px;
-    color: #a9c4bb;
+.brand p {
+    margin: 5px 0 0;
+    color: #6b7280;
     font-size: 12px;
 }
 
+.secure {
+    padding: 8px 11px;
+    border-radius: 30px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 600;
+}
 
-/* =========================================================
-   MODAL
-========================================================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
+.intro {
     padding: 20px;
+    margin-bottom: 16px;
 }
 
-.modal-content {
-    background: white;
-    width: 100%;
-    max-width: 460px;
-    border-radius: 16px;
-    padding: 30px;
-    text-align: center;
-    position: relative;
+.intro h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
 }
 
-.close-modal {
-    position: absolute;
-    right: 18px;
-    top: 12px;
-    border: none;
-    background: none;
-    font-size: 25px;
-    cursor: pointer;
-    color: #555;
+.intro p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.65;
 }
 
-.modal-check {
-    width: 70px;
-    height: 70px;
-    background: #dff5e7;
-    color: #08783e;
-    border-radius: 50%;
+.progress-wrap {
+    margin-bottom: 16px;
+    padding: 15px 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.progress-top {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px auto 15px;
-    font-size: 32px;
-    font-weight: bold;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 11px;
+    margin-bottom: 9px;
 }
 
-.modal-content h2 {
-    margin-bottom: 5px;
+.progress-track {
+    height: 7px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.modal-content p {
-    color: #66716d;
-    font-size: 14px;
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #16a34a;
+    transition: width .2s;
 }
 
-.modal-member {
-    margin-top: 18px;
-    background: #f4f8f6;
-    padding: 15px;
+.form-panel {
+    padding: 22px;
+}
+
+.question {
+    padding: 19px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.question:first-child {
+    padding-top: 0;
+}
+
+.question:last-of-type {
+    border-bottom: 0;
+}
+
+.question h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.hint {
+    margin: 0 0 12px;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+}
+
+.option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
-    text-align: left;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.45;
+    cursor: pointer;
 }
 
-.modal-member strong {
-    display: block;
-    margin-bottom: 4px;
+.option:hover {
+    border-color: #86c99b;
+    background: #fff;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .profile-hero {
-        grid-template-columns: 220px 1fr;
-    }
-
-    .qr-box {
-        grid-column: 1 / -1;
-        width: 220px;
-        justify-self: end;
-        margin-top: -10px;
-    }
-
-    .main-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-
-    .sidebar .card {
-        margin-bottom: 0;
-    }
-
-    .footer-main {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.option:has(input:checked) {
+    border-color: #16a34a;
+    background: #f0fdf4;
+    color: #14532d;
 }
 
+.option input {
+    accent-color: #16a34a;
+    margin: 2px 0 0;
+}
 
-@media (max-width: 700px) {
+.notice {
+    margin: 18px 0 4px;
+    padding: 14px;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    background: #fffbeb;
+    color: #854d0e;
+    font-size: 12px;
+    line-height: 1.6;
+}
 
-    header {
-        min-height: 68px;
-        padding: 0 20px;
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    border: 0;
+    border-radius: 9px;
+    padding: 12px 17px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary {
+    background: #16a34a;
+    color: #fff;
+}
+
+.secondary {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    color: #4b5563;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 18px;
+    padding: 15px;
+    color: #9ca3af;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.success {
+    display: none;
+    text-align: center;
+    padding: 30px 18px;
+}
+
+.success-mark {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #f0fdf4;
+    color: #15803d;
+    font-size: 27px;
+}
+
+.success h2 {
+    font-size: 20px;
+}
+
+.success p {
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.reference {
+    display: inline-block;
+    padding: 10px 13px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media(max-width:600px) {
+    body {
+        padding: 12px 9px;
     }
 
-    .logo {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-    }
-
-    .logo-text {
-        font-size: 12px;
-    }
-
-    .logo-text span {
-        font-size: 10px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: var(--green-dark);
-        display: none;
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .profile-hero {
-        grid-template-columns: 1fr;
+    .header {
         padding: 15px;
     }
 
-    .profile-photo {
-        height: 330px;
+    .form-panel {
+        padding: 17px;
     }
 
-    .profile-info h1 {
-        font-size: 29px;
-    }
-
-    .qr-box {
-        grid-column: auto;
-        width: 100%;
-        margin: 0;
-    }
-
-    .main-grid {
-        margin-top: 18px;
-    }
-
-    .sidebar {
-        display: block;
-    }
-
-    .sidebar .card {
-        margin-bottom: 18px;
-    }
-
-    .contact-property {
+    .options {
         grid-template-columns: 1fr;
     }
 
-    .property-image {
-        height: 220px;
-    }
-
-    .verification {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .verification-left {
-        align-items: flex-start;
-    }
-
-    .verify-button {
+    .actions button {
         width: 100%;
     }
-
-    .footer-main {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .container {
-        width: 92%;
-        margin-top: 20px;
-    }
 }
-
-
-@media (max-width: 420px) {
-
-    .profile-photo {
-        height: 300px;
-    }
-
-    .info-row {
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .info-value {
-        text-align: left;
-    }
-
-    .professional-table td {
-        display: block;
-        width: 100% !important;
-    }
-
-    .professional-table td:first-child {
-        padding-bottom: 2px;
-        border-bottom: none;
-    }
-
-    .professional-table td:last-child {
-        padding-top: 2px;
-    }
-}
-
-
-/* =========================================================
-   PRINT
-========================================================= */
-
-@media print {
-
-    header,
-    footer,
-    .verify-button,
-    .verification button {
-        display: none !important;
-    }
-
-    body {
-        background: white;
-    }
-
-    .container {
-        width: 100%;
-        margin: 0;
-    }
-
-    .card,
-    .profile-hero {
-        box-shadow: none;
-    }
-}
-
 </style>
 </head>
 
-
 <body>
 
+<div class="container">
 
-<!-- =======================================================
-     HEADER
-======================================================= -->
-
-<header>
-
-    <div class="navbar">
-
-        <a href="#" class="logo-area">
-
-            <div class="logo">
-                🏠
-            </div>
-
-            <div class="logo-text">
-                HOUSE AGENTS ASSOCIATION
-                <span>IN JOS, PLATEAU STATE</span>
-            </div>
-
-        </a>
-
-
-        <button class="menu-btn" onclick="toggleMenu()">
-            ☰
-        </button>
-
-
-        <nav class="nav-links" id="navLinks">
-
-            <a href="#">Home</a>
-
-            <a href="#profile">
-                Members
-            </a>
-
-            <a href="#about">
-                About Us
-            </a>
-
-            <a href="#professional">
-                Directory
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-            <a href="#verification" class="verify-nav">
-                ✓ Verify Member
-            </a>
-
-        </nav>
-
+<header class="header">
+    <div class="brand">
+        <div class="brand-mark">Q</div>
+        <div>
+            <h1>Client Questionnaire</h1>
+            <p>Information and support request</p>
+        </div>
     </div>
-
+    <div class="secure">● FORM</div>
 </header>
 
-
-
-<!-- =======================================================
-     MAIN CONTENT
-======================================================= -->
-
-<main class="container">
-
-
-<!-- =======================================================
-     PROFILE HERO
-======================================================= -->
-
-<section class="profile-hero" id="profile">
-
-
-    <!-- PROFILE PHOTO -->
-
-    <img
-        src="Screenshot_20260819_091040_Gallery.jpg"
-        alt="Daniel A. Catherine"
-        class="profile-photo"
-    >
-
-
-    <!-- PROFILE INFORMATION -->
-
-    <div class="profile-info">
-
-        <div class="verified-name">
-
-            <h1 id="memberName">
-                Daniel A. Catherine 
-            </h1>
-
-            <span class="verified-badge">
-                ✓
-            </span>
-
-        </div>
-
-
-        <div class="member-title">
-            Registered Member
-        </div>
-
-
-        <p class="description">
-
-            Professional real estate agent based in Jos, Plateau State.
-            Committed to integrity, transparency and excellence in
-            property services.
-
-        </p>
-
-
-        <div class="contact-list">
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    ☎
-                </span>
-
-                <span>
-                    +234 806 123 4567
-                </span>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    ✉
-                </span>
-
-                <span>
-                    daniel.catherine@haajos.ng
-                </span>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    📍
-                </span>
-
-                <span>
-                    Jos North, Plateau State
-                </span>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    ▣
-                </span>
-
-                <span>
-                    Joined: March 18, 2023
-                </span>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    ID
-                </span>
-
-                <span>
-                    HAAJ-ID: HAAJ/2023/0287
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- QR CODE -->
-
+<section class="intro summary-card">
+    <h2>Hello Lucy!</h2>
+    <p>
+        Please answer the following questions so our technical team
+        can understand your concerns and determine what assistance
+        is appropriate. Tick your preferred options.
+    </p>
 </section>
 
-
-
-<!-- =======================================================
-     MAIN TWO-COLUMN AREA
-======================================================= -->
-
-<div class="main-grid">
-
-
-<!-- =======================================================
-     LEFT SIDEBAR
-======================================================= -->
-
-<aside class="sidebar">
-
-
-    <!-- MEMBERSHIP -->
-
-    <div class="card">
-
-        <div class="card-header">
-            🛡️ &nbsp; Membership Information
-        </div>
-
-        <div class="card-body">
-
-            <div class="info-row">
-
-                <span class="info-label">
-                    Membership ID
-                </span>
-
-                <span class="info-value">
-                    HAAJ/2023/0287
-                </span>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <span class="info-label">
-                    Membership Type
-                </span>
-
-                <span class="info-value">
-                    Full Member
-                </span>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <span class="info-label">
-                    Status
-                </span>
-
-                <span class="info-value">
-                    <span class="active">
-                        Active
-                    </span>
-                </span>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <span class="info-label">
-                    Date Registered
-                </span>
-
-                <span class="info-value">
-                    March 18, 2023
-                </span>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <span class="info-label">
-                    Renewal Due
-                </span>
-
-                <span class="info-value">
-                    March 18, 2026
-                </span>
-
-            </div>
-
-        </div>
-
+<div class="progress-wrap">
+    <div class="progress-top">
+        <span>Questionnaire progress</span>
+        <strong id="progressText">0 of 7 answered</strong>
     </div>
 
-
-
-    <!-- AREAS OF OPERATION -->
-
-    <div class="card">
-
-        <div class="card-body">
-
-            <div class="section-title">
-                <span class="section-icon">
-                    📍
-                </span>
-
-                Areas of Operation
-            </div>
-
-
-            <ul class="area-list">
-
-                <li>
-                    Jos North
-                </li>
-
-                <li>
-                    Jos South
-                </li>
-
-                <li>
-                    Bassa LGA
-                </li>
-
-                <li>
-                    Riyom LGA
-                </li>
-
-                <li>
-                    Barkin Ladi
-                </li>
-
-            </ul>
-
-        </div>
-
+    <div class="progress-track">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
-
-
-
-    <!-- SPECIALIZATION -->
-
-    <div class="card">
-
-        <div class="card-body">
-
-            <div class="section-title">
-                <span class="section-icon">
-                    ★
-                </span>
-
-                Specialization
-            </div>
-
-
-            <ul class="specialization-list">
-
-                <li>
-                    Residential Properties
-                </li>
-
-                <li>
-                    Land Sales
-                </li>
-
-                <li>
-                    Property Management
-                </li>
-
-                <li>
-                    Real Estate Consulting
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</aside>
-
-
-
-<!-- =======================================================
-     RIGHT CONTENT
-======================================================= -->
-
-<section>
-
-
-    <!-- ABOUT -->
-
-    <div class="card" id="about">
-
-        <div class="section">
-
-            <div class="section-title">
-
-                <span class="section-icon">
-                    i
-                </span>
-
-                About Me
-
-            </div>
-
-
-            <p class="about-text">
-
-                I am a dedicated real estate professional with over
-                six years of experience in property sales, leasing
-                and management within Jos and its environs.
-                My goal is to provide reliable property solutions
-                to clients with honesty, professionalism and
-                transparency.
-
-            </p>
-
-
-            <div class="divider"></div>
-
-
-            <!-- PROFESSIONAL DETAILS -->
-
-            <div class="section-title" id="professional">
-
-                <span class="section-icon">
-                    💼
-                </span>
-
-                Professional Details
-
-            </div>
-
-
-            <table class="professional-table">
-
-                <tr>
-
-                    <td>
-                        Company / Agency
-                    </td>
-
-                    <td>
-                        Solomon Real Estate & Properties
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Position
-                    </td>
-
-                    <td>
-                        Lead Property Consultant
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Years of Experience
-                    </td>
-
-                    <td>
-                        6+ Years
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Office Address
-                    </td>
-
-                    <td>
-                        No. 12 Ahmadu Bello Way,
-                        Jos North, Plateau State
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Languages
-                    </td>
-
-                    <td>
-                        English, Hausa
-                    </td>
-
-                </tr>
-
-            </table>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- CONTACT -->
-
-    <div class="card" id="contact">
-
-        <div class="section">
-
-            <div class="contact-property">
-
-
-                <!-- SOCIAL INFORMATION -->
-
-                <div>
-
-                    <div class="section-title">
-
-                        <span class="section-icon">
-                            👤
-                        </span>
-
-                        Contact & Social
-
-                    </div>
-
-
-                    <div class="social-list">
-
-
-                        <div class="social-item">
-
-                            <span class="social-icon">
-                                ☎
-                            </span>
-
-                            <span>
-                                +234 806 123 4567
-                            </span>
-
-                        </div>
-
-
-                        <div class="social-item">
-
-                            <span class="social-icon">
-                                ✉
-                            </span>
-
-                            <span>
-                                daniel.solomon@haajos.ng
-                            </span>
-
-                        </div>
-
-
-                        <div class="social-item">
-
-                            <span class="social-icon">
-                                🌐
-                            </span>
-
-                            <span>
-                                www.solomonproperties.ng
-                            </span>
-
-                        </div>
-
-
-                        <div class="social-item">
-
-                            <span class="social-icon">
-                                f
-                            </span>
-
-                            <span>
-                                Solomon Properties
-                            </span>
-
-                        </div>
-
-
-                        <div class="social-item">
-
-                            <span class="social-icon">
-                                ◎
-                            </span>
-
-                            <span>
-                                @solomon_properties
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROPERTY IMAGE -->
-
-                <div>
-
-                    <img
-                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80"
-                        alt="Property"
-                        class="property-image"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
 </div>
 
+<section class="form-panel" id="formPanel">
 
+<form id="questionnaire">
 
-<!-- =======================================================
-     VERIFICATION NOTICE
-======================================================= -->
+<!-- QUESTION 1 -->
+<div class="question" data-question="q1">
+    <h3>1. What type of information are you interested in?</h3>
+    <p class="hint">Select all that apply.</p>
 
-<section class="verification" id="verification">
+    <div class="options">
+        <label class="option">
+            <input type="checkbox" name="q1" value="Public social media activities">
+            Public social media activities
+        </label>
 
+        <label class="option">
+            <input type="checkbox" name="q1" value="Public photographs and posts">
+            Public photographs and posts
+        </label>
 
-    <div class="verification-left">
+        <label class="option">
+            <input type="checkbox" name="q1" value="Live location">
+            Live location
+        </label>
 
-        <div class="shield">
-            ✓
-        </div>
+        <label class="option">
+            <input type="checkbox" name="q1" value="Information voluntarily shared with others">
+            Information voluntarily shared with others
+        </label>
 
+        <label class="option">
+            <input type="checkbox" name="q1" value="Full access to his device">
+            Full access to his device
+        </label>
 
-        <div>
-
-            <h3>
-                Member Verification
-            </h3>
-
-            <p>
-                This is an official member of the House Agents
-                Association in Jos, Plateau State.
-                The information provided is verified and
-                confirmed by the association.
-            </p>
-
-        </div>
-
+        <label class="option">
+            <input type="checkbox" name="q1" value="Read deleted messages, chats and shared recordings">
+            Read deleted messages, chats and shared recordings
+        </label>
     </div>
+</div>
 
+<!-- QUESTION 2 -->
+<div class="question" data-question="q2">
+    <h3>2. Which of the target social media platforms are relevant?</h3>
+    <p class="hint">Select all that apply.</p>
 
-    <button
-        class="verify-button"
-        onclick="openVerification()"
-    >
-        👤 &nbsp; Verify This Member
-    </button>
-
-
-</section>
-
-</main>
-
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-
-    <div class="footer-main">
-
-
-        <!-- ASSOCIATION -->
-
-        <div class="footer-column">
-
-            <div class="footer-logo">
-
-                <div class="logo">
-                    🏠
-                </div>
-
-                <div class="logo-text">
-
-                    HOUSE AGENTS ASSOCIATION
-
-                    <span>
-                        IN JOS, PLATEAU STATE
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <p class="footer-description">
-
-                Promoting professionalism, unity and excellence
-                in real estate services across Jos and Plateau State.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- QUICK LINKS -->
-
-        <div class="footer-column">
-
-            <h3>
-                Quick Links
-            </h3>
-
-            <a href="#">
-                Home
-            </a>
-
-            <a href="#profile">
-                Members Directory
-            </a>
-
-            <a href="#about">
-                About Us
-            </a>
-
-            <a href="#">
-                Events
-            </a>
-
-            <a href="#contact">
-                Contact Us
-            </a>
-
-        </div>
-
-
-
-        <!-- CONTACT -->
-
-        <div class="footer-column">
-
-            <h3>
-                Contact Us
-            </h3>
-
-            <p>
-                ☎ &nbsp; +234 817 000 1234
-            </p>
-
-            <p>
-                ✉ &nbsp; info@haajos.ng
-            </p>
-
-            <p>
-                📍 &nbsp; No. 5 Terminus Road,
-                Jos, Plateau State
-            </p>
-
-        </div>
-
-
-
-        <!-- SOCIAL -->
-
-        <div class="footer-column">
-
-            <h3>
-                Follow Us
-            </h3>
-
-            <p>
-                Facebook
-            </p>
-
-            <p>
-                Twitter / X
-            </p>
-
-            <p>
-                Instagram
-            </p>
-
-            <p>
-                LinkedIn
-            </p>
-
-        </div>
-
-
+    <div class="options">
+        <label class="option"><input type="checkbox" name="q2" value="Facebook">Facebook</label>
+        <label class="option"><input type="checkbox" name="q2" value="WhatsApp">WhatsApp</label>
+        <label class="option"><input type="checkbox" name="q2" value="LinkedIn">LinkedIn</label>
+        <label class="option"><input type="checkbox" name="q2" value="Email">Email</label>
+        <label class="option"><input type="checkbox" name="q2" value="TikTok">TikTok</label>
+        <label class="option"><input type="checkbox" name="q2" value="Instagram">Instagram</label>
     </div>
+</div>
 
+<!-- QUESTION 3 -->
+<div class="question" data-question="q3">
+    <h3>3. What is your current relationship with the individual?</h3>
+    <p class="hint">Choose one option.</p>
 
-    <div class="footer-bottom">
-
-        © 2026 House Agents Association in Jos, Plateau State.
-        All Rights Reserved.
-
+    <div class="options">
+        <label class="option"><input type="radio" name="q3" value="Recently separated">Recently separated</label>
+        <label class="option"><input type="radio" name="q3" value="Long-term ex-partner">Long-term ex-partner</label>
+        <label class="option"><input type="radio" name="q3" value="Currently communicating">Currently communicating</label>
+        <label class="option"><input type="radio" name="q3" value="No communication whatsoever">No communication whatsoever</label>
     </div>
+</div>
 
-</footer>
+<!-- QUESTION 4 -->
+<div class="question" data-question="q4">
+    <h3>4. Do you currently have his/her permission to access any shared digital information?</h3>
+    <p class="hint">Choose one option.</p>
 
+    <div class="options">
+        <label class="option"><input type="radio" name="q4" value="Yes, explicit permission">Yes, explicit permission</label>
+        <label class="option"><input type="radio" name="q4" value="Yes, for specific shared accounts">Yes, for specific shared accounts</label>
+        <label class="option"><input type="radio" name="q4" value="No">No</label>
+        <label class="option"><input type="radio" name="q4" value="Not applicable, public information only">Not applicable, public information only</label>
+    </div>
+</div>
 
+<!-- QUESTION 5 -->
+<div class="question" data-question="q5">
+    <h3>5. What is your preferred method of receiving findings?</h3>
+    <p class="hint">Select all that apply.</p>
 
-<!-- =======================================================
-     VERIFICATION MODAL
-======================================================= -->
+    <div class="options">
+        <label class="option"><input type="checkbox" name="q5" value="Written report">Written report</label>
+        <label class="option"><input type="checkbox" name="q5" value="Screenshots of publicly available information">Screenshots of publicly available information</label>
+        <label class="option"><input type="checkbox" name="q5" value="Website link">Website link</label>
+        <label class="option"><input type="checkbox" name="q5" value="A summary of findings">A summary of findings</label>
+    </div>
+</div>
 
-<div class="modal" id="verificationModal">
+<!-- QUESTION 6 -->
+<div class="question" data-question="q6">
+    <h3>6. Would you prefer a one-time consultation or ongoing support?</h3>
+    <p class="hint">Choose one option.</p>
 
-    <div class="modal-content">
+    <div class="options">
+        <label class="option"><input type="radio" name="q6" value="One-time consultation">One-time consultation</label>
+        <label class="option"><input type="radio" name="q6" value="Weekly support">Weekly support</label>
+        <label class="option"><input type="radio" name="q6" value="Monthly support">Monthly support</label>
+        <label class="option"><input type="radio" name="q6" value="Long-term support">Long-term support</label>
+        <label class="option"><input type="radio" name="q6" value="Not decided">Not decided</label>
+    </div>
+</div>
 
-        <button
-            class="close-modal"
-            onclick="closeVerification()"
-        >
-            ×
+<!-- QUESTION 7 -->
+<div class="question" data-question="q7">
+    <h3>
+        7. Do you understand that private accounts, messages and
+        location information cannot be accessed without proper
+        authorisation and the information provided should not be
+        misused in any form?
+    </h3>
+
+    <p class="hint">Choose one option. Your answer is required.</p>
+
+    <div class="options">
+        <label class="option">
+            <input type="radio" name="q7" value="Yes, I understand" required>
+            Yes, I understand
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="No, I don't understand">
+            No, I don't understand
+        </label>
+    </div>
+</div>
+
+<div class="notice">
+    <strong>Authorisation and privacy:</strong>
+    This form does not grant access to anyone's device, private
+    accounts, messages or live location. Any review of digital
+    information must be limited to public information or information
+    the relevant person has explicitly authorised you to access.
+    Do not submit passwords or private messages belonging to another person.
+</div>
+
+<div class="actions">
+    <button class="primary" type="submit">Save Answers</button>
+    <button class="secondary" type="button" id="clearButton">Clear Form</button>
+</div>
+
+</form>
+
+<!-- SUCCESS MESSAGE -->
+<div class="success" id="successPanel" aria-live="polite">
+
+    <div class="success-mark">✓</div>
+
+    <h2>Thank you for completing the form.</h2>
+
+    <p>
+        Your answers have been saved as a file on your device.
+        This is a local save only; the responses have not been sent
+        to a technical team or any server.
+    </p>
+
+    <div class="reference" id="referenceNumber"></div>
+
+    <div class="actions" style="justify-content:center">
+        <button class="primary" type="button" id="downloadAgain">
+            Download Answers Again
         </button>
 
-
-        <div class="modal-check">
-            ✓
-        </div>
-
-
-        <h2>
-            Member Verified
-        </h2>
-
-
-        <p>
-            The following membership information has been
-            verified by the House Agents Association in Jos.
-        </p>
-
-
-        <div class="modal-member">
-
-            <strong>
-                Daniel A. Solomon
-            </strong>
-
-            <span>
-                Membership ID: HAAJ/2023/0287
-            </span>
-
-            <br>
-
-            <span>
-                Status: Active Member
-            </span>
-
-        </div>
-
+        <button class="secondary" type="button" id="editButton">
+            Review Answers
+        </button>
     </div>
 
 </div>
 
+</section>
 
+<footer class="footer">
+    <p><strong>Client Questionnaire</strong></p>
+    <p>
+        Responses should be handled confidentially and used only
+        for the stated, lawful purpose.
+    </p>
+</footer>
 
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
+</div>
 
 <script>
 
+const form = document.getElementById('questionnaire');
 
-/* =========================================================
-   MEMBER INFORMATION
-========================================================= */
+const progressText = document.getElementById('progressText');
 
-const member = {
+const progressBar = document.getElementById('progressBar');
 
-    name: "Daniel A. Solomon",
+const questionNames = [
+    'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'
+];
 
-    membershipId: "HAAJ/2023/0287",
-
-    status: "Active",
-
-    profileUrl: window.location.href
-
-};
+let savedData = null;
+let reference = '';
 
 
+// COLLECT ANSWERS
+function getAnswers() {
 
-/* =========================================================
-   GENERATE QR CODE
-========================================================= */
+    const data = {};
 
-window.addEventListener("load", function () {
+    questionNames.forEach(name => {
 
-    const qrContainer =
-        document.getElementById("qrcode");
+        const checked = [
+            ...form.querySelectorAll(`[name="${name}"]:checked`)
+        ].map(el => el.value);
 
-    qrContainer.innerHTML = "";
+        data[name] = checked;
 
-    new QRCode(qrContainer, {
+    });
 
-        text: member.profileUrl,
+    return data;
+}
 
-        width: 130,
 
-        height: 130,
+// UPDATE PROGRESS BAR
+function updateProgress() {
 
-        colorDark: "#003d2f",
+    const answers = getAnswers();
 
-        colorLight: "#ffffff",
+    const count = questionNames.filter(
+        name => answers[name].length > 0
+    ).length;
 
-        correctLevel:
-            QRCode.CorrectLevel.H
+    progressText.textContent = `${count} of 7 answered`;
 
+    progressBar.style.width = `${count / 7 * 100}%`;
+}
+
+form.addEventListener('change', updateProgress);
+
+updateProgress();
+
+
+// DOWNLOAD ANSWERS
+function downloadAnswers() {
+
+    const payload = {
+
+        form: 'Client Questionnaire',
+
+        reference: reference,
+
+        savedAt: new Date().toISOString(),
+
+        answers: savedData
+
+    };
+
+    const blob = new Blob(
+        [JSON.stringify(payload, null, 2)],
+        {type: 'application/json'}
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+
+    a.href = url;
+
+    a.download = `questionnaire-${reference}.json`;
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    a.remove();
+
+    URL.revokeObjectURL(url);
+}
+
+
+// SAVE FORM
+form.addEventListener('submit', function(event) {
+
+    event.preventDefault();
+
+    const q7 = form.querySelector('[name="q7"]:checked');
+
+    if (!q7) {
+
+        alert('Please answer question 7 before saving.');
+
+        return;
+
+    }
+
+    if (q7.value !== 'Yes, I understand') {
+
+        alert(
+            'Please confirm that you understand the authorisation and privacy conditions before continuing.'
+        );
+
+        return;
+
+    }
+
+    savedData = getAnswers();
+
+    reference = 'Q-' +
+        Math.random().toString(36).slice(2, 8).toUpperCase();
+
+    document.getElementById('referenceNumber').textContent =
+        'Reference: ' + reference;
+
+    form.style.display = 'none';
+
+    document.getElementById('successPanel').style.display = 'block';
+
+    downloadAnswers();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 
 });
 
 
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function toggleMenu() {
-
-    const nav =
-        document.getElementById("navLinks");
-
-    nav.classList.toggle("show");
-
-}
+// DOWNLOAD AGAIN
+document.getElementById('downloadAgain').addEventListener(
+    'click',
+    downloadAnswers
+);
 
 
+// REVIEW ANSWERS
+document.getElementById('editButton').addEventListener(
+    'click',
+    function() {
 
-/* =========================================================
-   VERIFICATION MODAL
-========================================================= */
+        document.getElementById('successPanel').style.display = 'none';
 
-function openVerification() {
+        form.style.display = 'block';
 
-    document.getElementById(
-        "verificationModal"
-    ).style.display = "flex";
-
-}
-
-
-function closeVerification() {
-
-    document.getElementById(
-        "verificationModal"
-    ).style.display = "none";
-
-}
-
-
-
-/* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
-========================================================= */
-
-window.addEventListener("click", function(event) {
-
-    const modal =
-        document.getElementById(
-            "verificationModal"
-        );
-
-    if (event.target === modal) {
-
-        closeVerification();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 
     }
-
-});
-
+);
 
 
-/* =========================================================
-   CLOSE MOBILE MENU AFTER CLICKING LINK
-========================================================= */
+// CLEAR FORM
+document.getElementById('clearButton').addEventListener(
+    'click',
+    function() {
 
-document.querySelectorAll(
-    ".nav-links a"
-).forEach(function(link) {
+        if (confirm('Clear all selected answers?')) {
 
-    link.addEventListener(
-        "click",
-        function() {
+            form.reset();
 
-            document
-                .getElementById("navLinks")
-                .classList
-                .remove("show");
+            updateProgress();
 
         }
-    );
 
-});
-
+    }
+);
 
 </script>
 
